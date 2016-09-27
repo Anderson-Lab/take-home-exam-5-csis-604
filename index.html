@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Take-home-exam-5-csis-604 by Anderson-Lab</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Take-home-exam-5-csis-604</h1>
+        <p></p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/Anderson-Lab/take-home-exam-5-csis-604" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/Anderson-Lab/take-home-exam-5-csis-604/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/Anderson-Lab/take-home-exam-5-csis-604/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h3>
+<a id="part-1---leader-and-clock-synchronization" class="anchor" href="#part-1---leader-and-clock-synchronization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Part 1 - Leader and clock synchronization</h3>
+
+<ol>
+<li>Implement a leader election algorithm using the ring algorithm. You must have at least four virtual machines. Three for the front-end tier or client and one for the backend. You must select the lead from among these three. You need to be creative as to how elections are initiated. Leaders can resign at any time and other leader needs to be chosen.</li>
+<li>The leader will serve as the time server. Specifically, implement the Berkeley clock synchronization algorithm. Each machine neds to maintain a clock offset variable that represents the amount of time by which the clock is adjusted. Do not actually adjust the system clock by this value. Just provide a function to timestamp any request by simply reading the system time and then adjusting it with this offset.</li>
+</ol>
+
+<h3>
+<a id="part-2-distributed-mutual-exclusion" class="anchor" href="#part-2-distributed-mutual-exclusion" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Part 2: Distributed mutual exclusion</h3>
+
+<p>Problem: multiple front-end nodes can read and write to the database at the same time. We need a read-write lock to protect us. A read-write lock is a single lock that you can acquire either in read more or write mode. In this part, you will implement a distributed read-write lock using the leader. Each write message requires the front-end process to get a write lock on the database. No other front-end process may access the database for reading or writing when someone holds a write lock. Similarly, a retrieve message requires a read lock on the database. Multiple read-locks can be concurrently held on the database, but no write locks can be granted if at least one process holds a read lock. Thus, read locks allow concurrent access to multiple readers, while write locks only allow mutually exclusive access. For your database server, you can implement and protect a simple file that both clients are trying to read and write to. </p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/Anderson-Lab">Anderson-Lab</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
